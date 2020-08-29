@@ -1,7 +1,7 @@
 import React from 'react'
-import './CheckoutProducts.css'
+import '../css/CheckoutProducts.css'
 import StarIcon from '@material-ui/icons/Star';
-import { useStateValue } from './StateProvider';
+import { useStateValue } from '../context/StateProvider';
 
 function CheckoutProducts({ id, title, price, rating, image }) {
 

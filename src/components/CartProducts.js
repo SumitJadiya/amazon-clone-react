@@ -1,9 +1,9 @@
 import React from 'react'
-import '../css/CheckoutProducts.css'
+import '../css/CartProducts.css'
 import StarIcon from '@material-ui/icons/Star';
 import { useStateValue } from '../context/StateProvider';
 
-function CheckoutProducts({ id, title, price, rating, image }) {
+function CartProducts({ id, title, price, rating, image }) {
 
     const [{ cart }, dispatch] = useStateValue()
 
@@ -18,18 +18,18 @@ function CheckoutProducts({ id, title, price, rating, image }) {
     return (
         <div className="checkoutProduct">
             <img src={image} alt="" className="checkoutProduct__image" />
-            <div class="checkoutProduct__info">
-                <p class="checkoutProduct__title">{title}</p>
+            <div className="checkoutProduct__info">
+                <p className="checkoutProduct__title">{title}</p>
                 <p className="checkoutProduct__price">
                     <small>Rs.</small>
-                    <string>{price}</string>
+                    <strong>{price}</strong>
                 </p>
-                <div class="checkoutProduct__rating">
+                <div className="checkoutProduct__rating">
                     {
                         Array(rating)
                             .fill()
-                            .map((_) => (
-                                <StarIcon />
+                            .map((_, i) => (
+                                <StarIcon key={i} />
                             ))
                     }
                 </div>
@@ -39,4 +39,4 @@ function CheckoutProducts({ id, title, price, rating, image }) {
     )
 }
 
-export default CheckoutProducts
+export default CartProducts

@@ -7,7 +7,7 @@ import { useStateValue } from '../context/StateProvider';
 import { auth } from '../firebase/firebaseConfig';
 
 function Header() {
-    const [{ cart, user }, dispatch] = useStateValue()
+    const [{ cart, user }] = useStateValue()
 
     const login = () => {
         if (user) {
@@ -36,12 +36,22 @@ function Header() {
             {/* 3 Links */}
             <div className="header__nav">
                 {/* Link 1 - SignIn/SignOut */}
-                <Link to={!user && "/login"} className="header__link">
-                    <div onClick={login} className="header__option">
-                        <span className="header__optionLineOne">Hello {user ? user.email : 'User'}</span>
-                        <span className="header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
-                    </div>
-                </Link>
+                {user ?
+                    <Link to="/" className="header__link">
+                        <div onClick={login} className="header__option">
+                            <span className="header__optionLineOne">Hello {user ? user.email : 'User'}</span>
+                            <span className="header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
+                        </div>
+                    </Link>
+
+                    :
+                    <Link to="/login" className="header__link">
+                        <div onClick={login} className="header__option">
+                            <span className="header__optionLineOne">Hello {user ? user.email : 'User'}</span>
+                            <span className="header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
+                        </div>
+                    </Link>
+                }
                 {/* Link 2 - Return Order */}
                 <Link to="/" className="header__link">
                     <div className="header__option">
@@ -57,7 +67,7 @@ function Header() {
                     </div>
                 </Link>
                 {/* Basket*/}
-                <Link to="/checkout" className="header__link">
+                <Link to="/cart" className="header__link">
                     <div className="header__optionBasket">
                         {/* Shopping Basket Icon*/}
                         <ShoppingCartIcon />
@@ -65,7 +75,6 @@ function Header() {
                         <span className="header__optionLineTwo basket__count">{cart?.length}</span>
                     </div>
                 </Link>
-
             </div>
         </nav>
     )

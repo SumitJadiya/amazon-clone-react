@@ -5,7 +5,7 @@ import { useStateValue } from '../context/StateProvider';
 
 function Product({ id, title, price, rating, image }) {
 
-    const [{ }, dispatch] = useStateValue()
+    const [{ cart }, dispatch] = useStateValue()
 
     const addToCart = () => {
         // Add item to basket
@@ -17,18 +17,18 @@ function Product({ id, title, price, rating, image }) {
 
     return (
         <div className="product">
-            <div class="product__info">
+            <div className="product__info">
                 <p>{title}</p>
                 <p className="product__price">
                     <small>Rs.</small>
-                    <string>{price}</string>
+                    <strong>{price}</strong>
                 </p>
-                <div class="product__rating">
+                <div className="product__rating">
                     {
                         Array(rating)
                             .fill()
-                            .map((_) => (
-                                <StarIcon />
+                            .map((_, index) => (
+                                <StarIcon key={index} />
                             ))
                     }
                 </div>

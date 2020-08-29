@@ -7,7 +7,7 @@ export const getCartTotal = (cart) =>
     cart?.reduce((amount, item) => item.price + amount, 0)
 
 const reducer = (state, action) => {
-    console.log(state)
+
     switch (action.type) {
         case 'ADD_TO_CART':
             // Logic for adding item to cart

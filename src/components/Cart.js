@@ -1,14 +1,14 @@
 import React from 'react'
-import '../css/Checkout.css'
+import '../css/Cart.css'
 import { useStateValue } from '../context/StateProvider'
-import CheckoutProducts from './CheckoutProducts'
+import CartProducts from './CartProducts'
 import Subtotal from './Subtotal'
 
-function Checkout() {
-    const [{ cart }, dispatch] = useStateValue()
+function Cart() {
+    const [{ cart }] = useStateValue()
     return (
         <div className="checkout">
-            <div class="checkout__left">
+            <div className="checkout__left">
                 {/* 
                 <img
                     src="https://m.media-amazon.com/images/G/31/AMS/IN/970X250-_desktop_banner.jpg"
@@ -27,7 +27,8 @@ function Checkout() {
 
                             {/* List all the checkout products */}
                             {cart.map(item => (
-                                <CheckoutProducts
+                                <CartProducts
+                                    key={item.id}
                                     id={item.id}
                                     title={item.title}
                                     price={item.price}
@@ -49,4 +50,4 @@ function Checkout() {
     )
 }
 
-export default Checkout
+export default Cart

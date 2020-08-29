@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Header from './components/Header'
 import Home from './components/Home'
-import Checkout from './components/Checkout';
+import Cart from './components/Cart';
 import Login from './components/Login';
 import { useStateValue } from './context/StateProvider';
 import { useEffect } from 'react';
@@ -37,15 +37,13 @@ function App() {
     }
   }, [])
 
-  console.log(user)
-
   return (
     <Router>
       <div className="app">
         <Switch>
-          <Route path="/checkout">
+          <Route path="/cart">
             <Header />
-            <Checkout />
+            <Cart />
           </Route>
           <Route path="/login">
             <Login />

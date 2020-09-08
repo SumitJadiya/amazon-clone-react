@@ -1,6 +1,7 @@
 export const initialState = {
     cart: [],
-    user: null
+    user: null,
+    categories: ["Phones", "Laptops"]
 }
 
 export const getCartTotal = (cart) =>

@@ -42,17 +42,18 @@
 }
 
 .header__option {
+  height: 5vh;
   display: flex;
   flex-direction: column;
   margin: 0 10px;
 }
 
 .header__optionLineOne {
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .header__optionLineTwo {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -62,5 +63,18 @@
 }
 
 .basket__count {
+  font-size: 16px;
   margin: 0 15px 0 5px;
+}
+
+.header__flag {
+  width: 30px;
+  transform: scale(1.5);
+  position: relative;
+  display: inline-block;
+  height: 18px;
+  margin-left: 15px;
+  margin-right: 3px;
+  background-image: url("https://m.media-amazon.com/images/G/01/AUIClients/InternationalCustomerPreferencesNavAssets-icp_sprite-7285cab5f8342a9a80f19b7ae5b155f77772ffc6._V2_.png");
+  background-position: 0 -166px;
 }

@@ -1,11 +1,13 @@
 import React from 'react'
 import '../css/CartProducts.css'
 import StarIcon from '@material-ui/icons/Star';
+import StarHalfIcon from '@material-ui/icons/StarHalf';
 import { useStateValue } from '../context/StateProvider';
 
 function CartProducts({ id, title, price, rating, image }) {
 
     const [{ cart }, dispatch] = useStateValue()
+    let halfRating = (rating - Math.floor(rating)) * 10;
 
     const removeFromCart = () => {
 
@@ -26,12 +28,16 @@ function CartProducts({ id, title, price, rating, image }) {
                 </p>
                 <div className="checkoutProduct__rating">
                     {
-                        Array(rating)
+                        Array(Math.floor(rating))
                             .fill()
-                            .map((_, i) => (
-                                <StarIcon key={i} />
+                            .map((_, index) => (
+                                <StarIcon key={index} />
                             ))
                     }
+                    {
+                        (halfRating > 0) ? <StarHalfIcon /> : <></>
+                    }
+
                 </div>
                 <button onClick={removeFromCart}>Remove From Cart</button>
             </div>

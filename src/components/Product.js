@@ -9,7 +9,6 @@ function Product({ id, title, price, rating, image }) {
     const [{ cart }, dispatch] = useStateValue()
     let halfRating = (rating - Math.floor(rating)) * 10;
 
-
     const addToCart = () => {
         // Add item to basket
         dispatch({

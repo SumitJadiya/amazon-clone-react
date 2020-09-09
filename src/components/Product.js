@@ -1,11 +1,14 @@
 import React from 'react'
 import '../css/Product.css'
 import StarIcon from '@material-ui/icons/Star';
+import StarHalfIcon from '@material-ui/icons/StarHalf';
 import { useStateValue } from '../context/StateProvider';
 
 function Product({ id, title, price, rating, image }) {
 
     const [{ cart }, dispatch] = useStateValue()
+    let halfRating = (rating - Math.floor(rating)) * 10;
+
 
     const addToCart = () => {
         // Add item to basket
@@ -20,16 +23,19 @@ function Product({ id, title, price, rating, image }) {
             <div className="product__info">
                 <p>{title}</p>
                 <p className="product__price">
-                    <small>Rs.</small>
+                    <small>₹.</small>
                     <strong>{price}</strong>
                 </p>
                 <div className="product__rating">
                     {
-                        Array(rating)
+                        Array(Math.floor(rating))
                             .fill()
                             .map((_, index) => (
                                 <StarIcon key={index} />
                             ))
+                    }
+                    {
+                        (halfRating > 0) ? <StarHalfIcon /> : <></>
                     }
                 </div>
             </div>

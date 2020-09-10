@@ -16,6 +16,13 @@ const reducer = (state, action) => {
                 ...state,
                 cart: [...state.cart, action.payload]
             }
+
+        case 'EMPTY_BASKET':
+            return {
+                ...state,
+                cart: []
+            }
+
         case 'REMOVE_FROM_CART':
             // Logic for removing item from cart
 

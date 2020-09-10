@@ -7,6 +7,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getCartTotal } from "../context/reducer";
 import axios from "../axios";
+import { db } from "../firebase/firebaseConfig";
 
 function Payment() {
   const [{ cart, user }, dispatch] = useStateValue();
@@ -30,6 +31,7 @@ function Payment() {
         url: `/payments/create?total=${getCartTotal(cart) * 100}`,
       });
       setClientSecret(response.data.clientSecret);
+      console.log("secret is -> ", clientSecret);
     };
 
     getClientSecret();
@@ -49,17 +51,32 @@ function Payment() {
       .then(({ paymentIntent }) => {
         // payment intent = payment confirmation
 
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            cart: cart,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
 
-        history.replaceState("/orders");
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
+
+        history.replace("/orders");
       });
   };
 
   const handleChange = (e) => {
     // llisten for change of cardemelement
     // and display error
+    setDisabled(false);
   };
 
   return (
@@ -86,18 +103,16 @@ function Payment() {
             <h3>Review Items and Delivery</h3>
           </div>
           <div className="payment__items">
-            <p>
-              {cart.map((item, index) => (
-                <CartProducts
-                  key={index}
-                  id={item.id}
-                  title={item.title}
-                  price={item.price}
-                  rating={item.rating}
-                  image={item.image}
-                />
-              ))}
-            </p>
+            {cart.map((item, index) => (
+              <CartProducts
+                key={index}
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                rating={item.rating}
+                image={item.image}
+              />
+            ))}
           </div>
         </div>
         {/* payment method */}

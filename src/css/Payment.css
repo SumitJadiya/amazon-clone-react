@@ -2,9 +2,6 @@
   background-color: white;
 }
 
-.payment__container {
-}
-
 .payment__container > h1 {
   text-align: center;
   padding: 20px;
@@ -24,24 +21,26 @@
   border-bottom: 1px solid lightgray;
 }
 
-.payment__title {
-  flex: 0.2;
-}
-
-.payment__address {
-}
-
-.payment__items {
-}
-
-.payment__title > h3 {
-}
-
-.payment__details {
-}
-
 .payment__title,
 .payment__address,
 .payment__details {
   flex: 0.8;
 }
+
+/* .payment__container { */
+/* } */
+/* .payment__title { */
+/* flex: 0.2; */
+/* } */
+/*  */
+/* .payment__address { */
+/* } */
+/*  */
+/* .payment__items { */
+/* } */
+/*  */
+/* .payment__title > h3 { */
+/* } */
+/*  */
+/* .payment__details { */
+/* } */

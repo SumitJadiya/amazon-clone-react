@@ -4,7 +4,7 @@ import StarIcon from '@material-ui/icons/Star';
 import StarHalfIcon from '@material-ui/icons/StarHalf';
 import { useStateValue } from '../context/StateProvider';
 
-function CartProducts({ id, title, price, rating, image }) {
+const CartProducts = ({ id, title, price, rating, image }) => {
 
     const [{ cart }, dispatch] = useStateValue()
     let halfRating = (rating - Math.floor(rating)) * 10;
@@ -23,7 +23,7 @@ function CartProducts({ id, title, price, rating, image }) {
             <div className="checkoutProduct__info">
                 <p className="checkoutProduct__title">{title}</p>
                 <p className="checkoutProduct__price">
-                    <small>Rs.</small>
+                    <small>₹.</small>
                     <strong>{price}</strong>
                 </p>
                 <div className="checkoutProduct__rating">
@@ -37,7 +37,6 @@ function CartProducts({ id, title, price, rating, image }) {
                     {
                         (halfRating > 0) ? <StarHalfIcon /> : <></>
                     }
-
                 </div>
                 <button onClick={removeFromCart}>Remove From Cart</button>
             </div>

@@ -7,8 +7,8 @@ import { getCartTotal } from '../context/reducer'
 function Subtotal() {
     const [{ cart }] = useStateValue()
     return (
-        <div class="subtotal">
-            <div class="subtotal__head">
+        <div className="subtotal">
+            <div className="subtotal__head">
                 <img
                     src="https://images-eu.ssl-images-amazon.com/images/G/31/checkout/assets/TM_desktop._CB443006202_.png"
                     alt=""

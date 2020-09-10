@@ -18,31 +18,29 @@ const reducer = (state, action) => {
             }
         case 'REMOVE_FROM_CART':
             // Logic for removing item from cart
-            /* 
 
             let newCart = [...state.cart]
 
             const index = state.cart.findIndex(
                 item => item.id === action.payload
             )
-            
-            if(index>=0)
-                newCart.splice(index,1)
+
+            if (index >= 0)
+                newCart.splice(index, 1)
             else
-                console.warn(`can't remove as it's not available`)
-
-            return {
-                ...state, 
-                cart: newCart
-            }
-
-            */
-
+                console.warn(`can't remove product as ID ${action.payload} is not available`)
 
             return {
                 ...state,
-                cart: state.cart.filter(item => item.id !== action.payload)
+                cart: newCart
             }
+
+        /*
+        return {
+            ...state,
+            cart: state.cart.filter(item => item.id !== action.payload)
+        }
+        */
 
         case 'SET_USER':
             return {

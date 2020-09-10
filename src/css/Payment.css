@@ -42,5 +42,21 @@
 /* .payment__title > h3 { */
 /* } */
 /*  */
-/* .payment__details { */
-/* } */
+.payment__details > form {
+  max-width: 400px;
+}
+
+.payment__details > h3 {
+  padding-bottom: 20px;
+}
+
+.payment__details > form {
+  background-color: #f0c14b;
+  border-radius: 2px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  margin-top: 10px;
+  color: #111;
+}

@@ -50,7 +50,7 @@
   padding-bottom: 20px;
 }
 
-.payment__details > form {
+.payment__details > form > div > button {
   background-color: #f0c14b;
   border-radius: 2px;
   width: 100%;

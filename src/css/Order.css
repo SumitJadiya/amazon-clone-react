@@ -6,6 +6,15 @@
   position: relative;
 }
 
+.order > h1 {
+  text-align: center;
+}
+
+.order > h2,
+.order > p {
+  margin-bottom: 10px;
+}
+
 .order__id {
   position: absolute;
   top: 40px;

@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/Product.css'
 import StarIcon from '@material-ui/icons/Star';
+import { toast } from 'react-toastify';
 import StarHalfIcon from '@material-ui/icons/StarHalf';
 import { useStateValue } from '../context/StateProvider';
 
@@ -9,12 +10,15 @@ function Product({ id, title, price, rating, image }) {
     const [{ cart }, dispatch] = useStateValue()
     let halfRating = (rating - Math.floor(rating)) * 10;
 
+
     const addToCart = () => {
         // Add item to basket
         dispatch({
             type: 'ADD_TO_CART',
             payload: { id, title, price, rating, image }
         })
+        toast.info(`${title} added worth \n ₹${price}`);
+        console.log("toast?")
     }
 
     return (

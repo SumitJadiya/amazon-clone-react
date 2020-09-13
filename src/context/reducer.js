@@ -1,6 +1,7 @@
 export const initialState = {
     cart: [],
     user: null,
+    profile: null,
     categories: ["Phones", "Laptops"]
 }
 
@@ -25,7 +26,6 @@ const reducer = (state, action) => {
 
         case 'REMOVE_FROM_CART':
             // Logic for removing item from cart
-
             let newCart = [...state.cart]
 
             const index = state.cart.findIndex(
@@ -53,6 +53,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 user: action.user
+            }
+        case 'SET_PROFILE':
+            return {
+                ...state,
+                profile: action.userName
             }
         default:
             return state

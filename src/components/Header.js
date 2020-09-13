@@ -7,7 +7,7 @@ import { useStateValue } from '../context/StateProvider';
 import { auth } from '../firebase/firebaseConfig';
 
 function Header() {
-    const [{ cart, user }] = useStateValue()
+    const [{ cart, user, profile }] = useStateValue()
 
     const login = () => {
         if (user) {
@@ -41,7 +41,7 @@ function Header() {
                 {user ?
                     <Link to="/" className="header__link">
                         <div onClick={login} className="header__option">
-                            <span className="header__optionLineOne">Hello {user ? user.email : 'Guest'}</span>
+                            <span className="header__optionLineOne">Hello, {user ? profile?.userName : 'Guest'}</span>
                             <span className="header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
                         </div>
                     </Link>
@@ -49,7 +49,7 @@ function Header() {
                     :
                     <Link to="/login" className="header__link">
                         <div onClick={login} className="header__option">
-                            <span className="header__optionLineOne">Hello {user ? user.email : 'User'}</span>
+                            <span className="header__optionLineOne">Hello, {user ? profile?.userName : 'User'}</span>
                             <span className="header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
                         </div>
                     </Link>
@@ -66,6 +66,13 @@ function Header() {
                     <div className="header__option">
                         <span className="header__optionLineOne">Your</span>
                         <span className="header__optionLineTwo">Prime</span>
+                    </div>
+                </Link>
+                {/* Link 4 - Profile */}
+                <Link to="/profile" className="header__link">
+                    <div className="header__option">
+                        <span className="header__optionLineOne">Your</span>
+                        <span className="header__optionLineTwo">Profile</span>
                     </div>
                 </Link>
                 {/* Basket*/}

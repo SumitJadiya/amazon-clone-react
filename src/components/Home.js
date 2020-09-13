@@ -2,6 +2,7 @@ import React from 'react'
 import "../css/Home.css"
 import Product from './Product'
 import { useEffect } from 'react'
+import { ToastContainer } from 'react-toastify';
 
 const Home = () => {
 
@@ -13,6 +14,9 @@ const Home = () => {
         <div className="home">
             <div className="home__container">
                 {/* Image Banner */}
+                <div className="home__toast-container">
+                    <ToastContainer />
+                </div>
                 <div className="home__slider-container">
                     <div className="home__slide">
                         <img

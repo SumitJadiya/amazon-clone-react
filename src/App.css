@@ -1,3 +1,16 @@
 * {
   margin: 0;
 }
+.Toastify__toast--info {
+  background-color: rgb(234, 237, 237) !important;
+  font-size: 14px;
+  color: #131921;
+}
+
+.Toastify__progress-bar {
+  background-color: #131921 !important;
+}
+
+.Toastify__toast-container--top-right {
+  top: 4em !important;
+}

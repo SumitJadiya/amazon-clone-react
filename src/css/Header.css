@@ -1,4 +1,5 @@
 .header {
+  height: 60px;
   background-color: #131921;
   display: flex;
   align-items: center;
@@ -16,6 +17,8 @@
 .header__search {
   display: flex;
   flex: 1;
+  align-items: center;
+  border-radius: 24px;
 }
 
 .header__searchInput {
@@ -49,7 +52,7 @@
 }
 
 .header__optionLineOne {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .header__optionLineTwo {
@@ -60,11 +63,15 @@
 .header__optionBasket {
   display: flex;
   align-items: center;
+  color: white;
 }
 
 .basket__count {
   font-size: 16px;
-  margin: 0 15px 0 5px;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  margin: 0 15px 0 -10px;
+  padding: 2px 4px;
 }
 
 .header__flag {
@@ -77,4 +84,9 @@
   margin-right: 3px;
   background-image: url("https://m.media-amazon.com/images/G/01/AUIClients/InternationalCustomerPreferencesNavAssets-icp_sprite-7285cab5f8342a9a80f19b7ae5b155f77772ffc6._V2_.png");
   background-position: 0 -166px;
+}
+
+.header__optionBasket > .MuiSvgIcon-root {
+  width: 34px !important;
+  height: 34px !important;
 }

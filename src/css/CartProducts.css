@@ -2,12 +2,18 @@
   display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
+  transition: all 0.5s ease-in-out;
 }
 
 .checkoutProduct__image {
   object-fit: contain;
   width: 180px;
   height: 180px;
+  transition: all 0.5s;
+}
+
+.checkoutProduct__image:hover {
+  transform: scale(1.05);
 }
 
 .checkoutProduct__info {
@@ -18,7 +24,13 @@
   background-color: #f0c14b;
   border: 1px solid;
   border-color: #a88734 #9c7e31 #846a29;
-  margin-top: 40px;
+  margin-top: 20px;
+  padding: 5px 10px;
+  transition: all 0.1s ease-in-out;
+}
+
+.checkoutProduct__info > button:hover {
+  transform: scale(1.04);
 }
 
 .checkoutProduct__title {

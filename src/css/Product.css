@@ -31,10 +31,22 @@
   max-height: 200px;
   object-fit: contain;
   margin-bottom: 15px;
+  transition: all 0.5s;
+}
+
+.product > img:hover {
+  transform: scale(1.05);
 }
 
 .product > button {
   background-color: #f0c14b;
   border: 1px solid;
   border-color: #a88734 #9c7e31 #846a29;
+  margin-top: 20px;
+  padding: 5px 10px;
+  transition: all 1s ease-in-out;
+}
+
+.product > button:hover {
+  transform: scale(1.04);
 }

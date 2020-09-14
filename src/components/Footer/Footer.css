@@ -1,0 +1,83 @@
+.Footer {
+  color: white;
+  background-color: #232f3e;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.Footer__Back-To-Top {
+  background-color: #37475a !important;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.Footer__Back-To-Top:focus,
+.Footer__Back-To-Top:hover {
+  background-color: #485769 !important;
+  cursor: pointer;
+}
+
+.Footer__Back-To-Top-Text {
+  color: white;
+  display: block;
+  padding: 10px 0;
+  line-height: 19px;
+  font-size: 40px !important;
+}
+
+.Footer__Back-To-Top-Text:hover {
+  padding: 0;
+  font-size: 60px !important;
+}
+
+.Footer__Vertical-Row {
+  display: table;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.Footer__Vertical-Col {
+  display: table-cell;
+  padding: 0 10px;
+  line-height: 19px;
+}
+
+.Footer__Vertical-Col-Head {
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 16px;
+  margin: 6px 0 14px 0;
+  white-space: nowrap;
+}
+
+.Footer__Vertical-Col > ul {
+  margin: 0;
+  padding: 0;
+}
+
+.Footer__Vertical-Col > ul > li {
+  list-style-type: none;
+}
+
+.Footer__Line {
+  display: flex;
+  justify-content: center;
+}
+
+.Footer__Line-logo {
+  width: 100px;
+  object-fit: contain;
+  margin: 18px 20px 0 20px;
+}
+
+.Footer__Line-message {
+  align-items: center;
+  display: flex;
+  font-size: 120%;
+}
+
+.Footer__Line-message > a {
+  text-decoration: none;
+  color: white;
+  margin-left: 5px;
+}

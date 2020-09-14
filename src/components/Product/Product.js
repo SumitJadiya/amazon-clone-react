@@ -3,13 +3,16 @@ import './Product.css'
 import StarIcon from '@material-ui/icons/Star';
 import { toast } from 'react-toastify';
 import StarHalfIcon from '@material-ui/icons/StarHalf';
+import StarOutlineIcon from '@material-ui/icons/StarBorder';
 import { useStateValue } from '../../context/StateProvider';
 
 function Product({ id, title, price, rating, image }) {
 
     const [{ cart }, dispatch] = useStateValue()
     let halfRating = (rating - Math.floor(rating)) * 10;
+    let outline = 0;
 
+    halfRating > 0 ? outline = (5 - Math.ceil(rating)) : outline = (5 - Math.floor(rating))
 
     const addToCart = () => {
         // Add item to basket
@@ -39,6 +42,16 @@ function Product({ id, title, price, rating, image }) {
                     }
                     {
                         (halfRating > 0) ? <StarHalfIcon /> : <></>
+                    }
+                    {
+                        outline > 0 ? (
+                            Array(outline)
+                                .fill()
+                                .map((_, index) => (
+                                    <StarOutlineIcon key={index} />
+                                ))
+                        )
+                            : ""
                     }
                 </div>
             </div>

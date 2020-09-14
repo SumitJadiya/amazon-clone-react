@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Elements } from '@stripe/react-stripe-js'
 import { auth, db } from './firebase/firebaseConfig';
 import { useStateValue } from './context/StateProvider';
+import Footer from './components/Footer/Footer';
 
 const promise = loadStripe('pk_test_51HPvTZEm4kUlkaUGOprKB6CIt1RW7nlhHhINLYNBJCTM2m2eSwsML1Lq6eEJmHadidUcmUAP1Rbtq45kC4EW9Iv200K0HUq19q')
 
@@ -22,7 +23,6 @@ function App() {
   const [{ user }, dispatch] = useStateValue()
 
   useEffect(() => {
-    console.log("First useEffect")
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       // user is logged in
       dispatch({
@@ -38,7 +38,6 @@ function App() {
   }, [])
 
   useEffect(() => {
-    console.log("User Useffect")
     if (user && profile) {
       db.collection('users').doc(user?.uid).collection('profile')
         .onSnapshot(snapshot => (
@@ -55,8 +54,6 @@ function App() {
       userName: profile[0],
     });
   }, [profile])
-
-  console.log("email -> ", profile[0]?.userName)
 
   return (
     <Router>
@@ -87,6 +84,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

@@ -1,4 +1,9 @@
 .header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__top {
   height: 60px;
   background-color: #131921;
   display: flex;
@@ -34,9 +39,14 @@
   background-color: #cd9042;
 }
 
-.header__nav {
+.header__nav,
+.header__nav span {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.header__link:first-child {
+  width: 130px;
 }
 
 .header__link {
@@ -89,4 +99,37 @@
 .header__optionBasket > .MuiSvgIcon-root {
   width: 34px !important;
   height: 34px !important;
+}
+
+.header__bottom {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  height: 40px;
+  color: white;
+  background-color: #232f3e;
+}
+
+.header__address {
+  display: flex;
+}
+
+.header__address-icon {
+  vertical-align: middle;
+}
+
+.header__address-icon > .MuiSvgIcon-root {
+  font-size: 2rem;
+}
+
+.header__bottom-nav {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.header__bottom-nav > span {
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 600;
 }

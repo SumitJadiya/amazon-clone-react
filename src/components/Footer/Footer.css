@@ -61,6 +61,7 @@
 
 .Footer__Line {
   display: flex;
+  padding: 10px 0;
   justify-content: center;
 }
 

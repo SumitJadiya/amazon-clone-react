@@ -1,5 +1,5 @@
 .checkout {
-  min-height: 85vh;
+  flex: 1 0 auto;
   display: flex;
   padding: 20px;
   background-color: white;

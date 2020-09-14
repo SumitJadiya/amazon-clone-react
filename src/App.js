@@ -57,7 +57,7 @@ function App() {
 
   return (
     <Router>
-      <div className="app">
+      <div className="App">
         <Switch>
           <Route path="/cart">
             <Header />

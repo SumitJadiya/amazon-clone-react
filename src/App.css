@@ -14,3 +14,9 @@
 .Toastify__toast-container--top-right {
   top: 4em !important;
 }
+
+.App {
+  height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+}

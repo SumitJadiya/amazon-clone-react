@@ -126,6 +126,7 @@ function Header() {
         {/* Advt */}
         <div className="header__bottom-app">
           <img
+            className="header__bottom-image"
             alt="Amazon App"
             src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/MAI/Sweepstakes/June20/SWM_DownloadApp._CB410314483_.jpg"
           />

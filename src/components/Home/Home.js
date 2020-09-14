@@ -21,6 +21,12 @@ const Home = () => {
                     <div className="home__slide">
                         <img
                             className="home__image "
+                            src="https://images-eu.ssl-images-amazon.com/images/G/31/skillsstore/2020/August/Medh_Alexa_GW_3000x1200._CB405585145_.jpg"
+                            alt="image0" />
+                    </div>
+                    <div className="home__slide">
+                        <img
+                            className="home__image "
                             src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/AmazonDevices/2019/Post_AugArt/GW_Echo_PC_2x_V2._CB405879256_.jpg"
                             alt="image1" />
                     </div>

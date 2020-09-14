@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import Home from './components/Home/Home'
 import Cart from './components/Cart/Cart'
 import Login from './components/Login/Login'
-import Header from './components/Header/Header'
+import Header from './layout/Header/Header'
 import Orders from './components/Orders/Orders'
 import Profile from './components/Profile/Profile'
 import Payment from './components/Payment/Payment'
@@ -14,7 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Elements } from '@stripe/react-stripe-js'
 import { auth, db } from './firebase/firebaseConfig';
 import { useStateValue } from './context/StateProvider';
-import Footer from './components/Footer/Footer';
+import Footer from './layout/Footer/Footer';
 
 const promise = loadStripe('pk_test_51HPvTZEm4kUlkaUGOprKB6CIt1RW7nlhHhINLYNBJCTM2m2eSwsML1Lq6eEJmHadidUcmUAP1Rbtq45kC4EW9Iv200K0HUq19q')
 

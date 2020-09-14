@@ -1,12 +1,10 @@
 import React from "react";
 import "./Footer.css";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
-import { Link } from "react-router-dom";
 
 function Footer() {
   const handleClick = () => {
-    console.log(Document.height);
-    //window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   };
 
   return (

@@ -24,20 +24,11 @@ function App() {
   useEffect(() => {
     console.log("First useEffect")
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
-      if (authUser) {
-        // user is logged in
-        dispatch({
-          type: "SET_USER",
-          user: authUser
-        })
-      }
-      else {
-        // user is logged out
-        dispatch({
-          type: "SET_USER",
-          user: null
-        })
-      }
+      // user is logged in
+      dispatch({
+        type: "SET_USER",
+        user: authUser ? authUser : null
+      })
     })
 
     return () => {

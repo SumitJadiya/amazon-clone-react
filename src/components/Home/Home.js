@@ -1,6 +1,6 @@
 import React from 'react'
-import "../css/Home.css"
-import Product from './Product'
+import "./Home.css"
+import Product from '../Product/Product'
 import { useEffect } from 'react'
 import { ToastContainer } from 'react-toastify';
 

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "../css/Payment.css";
-import CartProducts from "./CartProducts";
-import { useStateValue } from "../context/StateProvider";
+import "./Payment.css";
+import CartProducts from "../CartProducts/CartProducts";
+import { useStateValue } from "../../context/StateProvider";
 import { Link, useHistory } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
-import { getCartTotal } from "../context/reducer";
-import axios from "../axios";
-import { db } from "../firebase/firebaseConfig";
+import { getCartTotal } from "../../context/reducer";
+import axios from "../../utils/axios";
+import { db } from "../../firebase/firebaseConfig";
 
 function Payment() {
   const [{ cart, user }, dispatch] = useStateValue();

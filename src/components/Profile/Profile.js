@@ -1,10 +1,9 @@
 import React from "react";
-import "../css/Profile.css";
-import uuid from "react-uuid";
+import "./Profile.css";
 import { useState } from "react";
-import { db } from "../firebase/firebaseConfig";
+import { db } from "../../firebase/firebaseConfig";
 import { Link, useHistory } from "react-router-dom";
-import { useStateValue } from "../context/StateProvider";
+import { useStateValue } from "../../context/StateProvider";
 
 function Profile() {
   const history = useHistory();

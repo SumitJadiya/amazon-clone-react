@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { useEffect } from 'react'
-import Home from './components/Home'
-import Cart from './components/Cart'
-import Login from './components/Login'
-import Header from './components/Header'
-import Orders from './components/Orders'
-import Profile from './components/Profile'
-import Payment from './components/Payment'
+import Home from './components/Home/Home'
+import Cart from './components/Cart/Cart'
+import Login from './components/Login/Login'
+import Header from './components/Header/Header'
+import Orders from './components/Orders/Orders'
+import Profile from './components/Profile/Profile'
+import Payment from './components/Payment/Payment'
 import { loadStripe } from '@stripe/stripe-js'
 import 'react-toastify/dist/ReactToastify.css';
 import { Elements } from '@stripe/react-stripe-js'

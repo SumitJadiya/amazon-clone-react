@@ -1,8 +1,8 @@
 import React from 'react'
-import '../css/Cart.css'
-import { useStateValue } from '../context/StateProvider'
-import CartProducts from './CartProducts'
-import Subtotal from './Subtotal'
+import './Cart.css'
+import { useStateValue } from '../../context/StateProvider'
+import CartProducts from '../CartProducts/CartProducts'
+import Subtotal from '../Subtotal/Subtotal'
 import FlipMove from 'react-flip-move';
 
 function Cart() {

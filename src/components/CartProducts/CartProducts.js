@@ -1,8 +1,8 @@
 import React from 'react'
-import '../css/CartProducts.css'
+import './CartProducts.css'
 import StarIcon from '@material-ui/icons/Star';
 import StarHalfIcon from '@material-ui/icons/StarHalf';
-import { useStateValue } from '../context/StateProvider';
+import { useStateValue } from '../../context/StateProvider';
 
 const CartProducts = ({ id, title, price, rating, image, hideButton }) => {
 

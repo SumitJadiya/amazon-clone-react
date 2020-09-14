@@ -1,10 +1,10 @@
 import React from 'react'
-import '../css/Header.css'
+import './Header.css'
 import { Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import { useStateValue } from '../context/StateProvider';
-import { auth } from '../firebase/firebaseConfig';
+import { useStateValue } from '../../context/StateProvider';
+import { auth } from '../../firebase/firebaseConfig';
 
 function Header() {
     const [{ cart, user, profile }] = useStateValue()

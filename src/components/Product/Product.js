@@ -1,9 +1,9 @@
 import React from 'react'
-import '../css/Product.css'
+import './Product.css'
 import StarIcon from '@material-ui/icons/Star';
 import { toast } from 'react-toastify';
 import StarHalfIcon from '@material-ui/icons/StarHalf';
-import { useStateValue } from '../context/StateProvider';
+import { useStateValue } from '../../context/StateProvider';
 
 function Product({ id, title, price, rating, image }) {
 

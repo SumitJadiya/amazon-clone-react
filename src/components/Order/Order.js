@@ -1,6 +1,6 @@
 import React from 'react'
-import '../css/Order.css'
-import CartProducts from './CartProducts'
+import './Order.css'
+import CartProducts from '../CartProducts/CartProducts'
 import moment from 'moment'
 import CurrencyFormat from 'react-currency-format'
 

@@ -1,10 +1,10 @@
 import React from 'react'
-import '../css/Orders.css'
+import './Orders.css'
 import { useEffect } from 'react';
-import { db } from '../firebase/firebaseConfig';
-import { useStateValue } from '../context/StateProvider';
+import { db } from '../../firebase/firebaseConfig';
+import { useStateValue } from '../../context/StateProvider';
 import { useState } from 'react';
-import Order from './Order';
+import Order from '../Order/Order';
 
 function Orders() {
     const [{ cart, user }, dispatch] = useStateValue();

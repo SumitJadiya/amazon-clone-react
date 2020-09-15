@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import RoomOutlinedIcon from "@material-ui/icons/RoomOutlined";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
@@ -19,6 +20,9 @@ function Header() {
   return (
     <nav className="header">
       <div className="header__top">
+        <div className="header__left-nav">
+          <MenuIcon />
+        </div>
         {/* Logo on left */}
         <Link to="/">
           <img
@@ -116,12 +120,15 @@ function Header() {
           <span>Computers</span>
           <span>Pantry</span>
           <span>Electronics</span>
+          {/*
+
           <span>Books</span>
           <span>New Release</span>
           <span>Gift Ideas</span>
           <span>Customer Service</span>
           <span>Fashion</span>
           <span>Amazon Pay</span>
+          */}
         </div>
         {/* Advt */}
         <div className="header__bottom-app">

@@ -1,6 +1,6 @@
 ## Amazon Clone
 
-Fully Functional E-Commerce Website wiht Stripe Payment.
+Fully Functioning E-Commerce Website with Stripe Payment Gateway.
 
 Live Website: https://clone-36782.web.app/
 

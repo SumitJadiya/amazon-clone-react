@@ -21,7 +21,6 @@ function Product({ id, title, price, rating, image }) {
             payload: { id, title, price, rating, image }
         })
         toast.info(`${title} added worth \n ₹${price}`);
-        console.log("toast?")
     }
 
     return (
@@ -29,31 +28,33 @@ function Product({ id, title, price, rating, image }) {
             <img src={image} alt={title} />
             <div className="product__info">
                 <p>{title}</p>
-                <p className="product__price">
-                    <small>₹.</small>
-                    <strong>{price}</strong>
-                </p>
-                <div className="product__rating">
-                    {
-                        Array(Math.floor(rating))
-                            .fill()
-                            .map((_, index) => (
-                                <StarIcon key={index} />
-                            ))
-                    }
-                    {
-                        (halfRating > 0) ? <StarHalfIcon /> : <></>
-                    }
-                    {
-                        outline > 0 ? (
-                            Array(outline)
+                <div className="product__group">
+                    <p className="product__price">
+                        <small>₹.</small>
+                        <strong>{price}</strong>
+                    </p>
+                    <div className="product__rating">
+                        {
+                            Array(Math.floor(rating))
                                 .fill()
                                 .map((_, index) => (
-                                    <StarOutlineIcon key={index} />
+                                    <StarIcon key={index} />
                                 ))
-                        )
-                            : ""
-                    }
+                        }
+                        {
+                            (halfRating > 0) ? <StarHalfIcon /> : <></>
+                        }
+                        {
+                            outline > 0 ? (
+                                Array(outline)
+                                    .fill()
+                                    .map((_, index) => (
+                                        <StarOutlineIcon key={index} />
+                                    ))
+                            )
+                                : ""
+                        }
+                    </div>
                 </div>
             </div>
 

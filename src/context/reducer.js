@@ -2,6 +2,7 @@ export const initialState = {
     cart: [],
     user: null,
     profile: null,
+    products: [],
     categories: ["Phones", "Laptops"]
 }
 
@@ -48,6 +49,12 @@ const reducer = (state, action) => {
             cart: state.cart.filter(item => item.id !== action.payload)
         }
         */
+        case 'ADD_TO_PRODUCTS':
+            // Logic for adding item to cart
+            return {
+                ...state,
+                products: [...state.products, action.payload]
+            }
 
         case 'SET_USER':
             return {

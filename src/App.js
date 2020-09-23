@@ -21,6 +21,7 @@ const promise = loadStripe('pk_test_51HPvTZEm4kUlkaUGOprKB6CIt1RW7nlhHhINLYNBJCT
 
 function App() {
   const [profile, setProfile] = useState([]);
+  const [products, setProducts] = useState([]);
   const [{ user }, dispatch] = useStateValue()
 
   useEffect(() => {
@@ -49,6 +50,15 @@ function App() {
     }
     else
       setProfile([])
+
+    if (user && products) {
+      db.collection('products').doc().collection('products')
+        .onSnapshot(snapshot => (
+          setProducts(snapshot.docs.map(doc => doc.data()))
+        ))
+    }
+    else
+      setProducts([])
   }, [user])
 
   useEffect(() => {
@@ -57,6 +67,8 @@ function App() {
       userName: profile[0],
     });
   }, [profile])
+
+  console.log(products)
 
   return (
     <Router>

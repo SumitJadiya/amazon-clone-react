@@ -24,7 +24,6 @@ function Header() {
       .then(data => setAddress(data));
 
   }, [])
-  console.log(address)
 
   return (
     <nav className="header">
@@ -122,9 +121,11 @@ function Header() {
         </div>
         {/* Nav */}
         <div className="header__bottom-nav">
-          <Link to="/login" className="header__link">
-            <span>All Products</span>
-          </Link>
+          <span>
+            <Link to="/products" className="header__link">
+              All Products
+            </Link>
+          </span>
           <span>Mobile</span>
           <span>Best Sellers</span>
           <span>Today's Deak</span>

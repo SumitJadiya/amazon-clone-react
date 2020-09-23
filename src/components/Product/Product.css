@@ -14,11 +14,21 @@
 
 .product__info {
   height: 100px;
-  margin-bottom: 15px;
+}
+
+.product__info > p {
+  text-align: center;
+}
+
+.product__group {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
 }
 
 .product__price {
-  margin-top: 5px;
+  margin-top: 3px;
+  padding-right: 10px;
 }
 
 .product__rating {
@@ -42,11 +52,7 @@
   background-color: #f0c14b;
   border: 1px solid;
   border-color: #a88734 #9c7e31 #846a29;
-  margin-top: 20px;
+  margin-top: 5px;
   padding: 5px 10px;
-  transition: all 1s ease-in-out;
-}
-
-.product > button:hover {
-  transform: scale(1.04);
+  width: 100%;
 }

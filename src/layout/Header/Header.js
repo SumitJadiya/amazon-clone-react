@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -10,12 +10,21 @@ import { auth } from "../../firebase/firebaseConfig";
 
 function Header() {
   const [{ cart, user, profile }] = useStateValue();
+  const [address, setAddress] = useState('')
 
   const login = () => {
-    if (user) {
+    if (user)
       auth.signOut();
-    }
   };
+
+  useEffect(() => {
+    const URL = 'https://geolocation-db.com/json/697de680-a737-11ea-9820-af05f4014d91';
+    fetch(URL)
+      .then(res => res.json())
+      .then(data => setAddress(data));
+
+  }, [])
+  console.log(address)
 
   return (
     <nav className="header">
@@ -55,17 +64,17 @@ function Header() {
               </div>
             </Link>
           ) : (
-            <Link to="/login" className="header__link">
-              <div onClick={login} className="header__option">
-                <span className="header__optionLineOne">
-                  Hello, {user ? profile?.userName : "User"}
-                </span>
-                <span className="header__optionLineTwo">
-                  {user ? "Sign Out" : "Sign In"}
-                </span>
-              </div>
-            </Link>
-          )}
+              <Link to="/login" className="header__link">
+                <div onClick={login} className="header__option">
+                  <span className="header__optionLineOne">
+                    Hello, {user ? profile?.userName : "User"}
+                  </span>
+                  <span className="header__optionLineTwo">
+                    {user ? "Sign Out" : "Sign In"}
+                  </span>
+                </div>
+              </Link>
+            )}
           {/* Link 2 - Return Order */}
           <Link to="/orders" className="header__link">
             <div className="header__option">
@@ -107,12 +116,15 @@ function Header() {
             <RoomOutlinedIcon />
           </div>
           <div className="header__option">
-            <span className="header__optionLineOne">Hello</span>
-            <span className="header__optionLineTwo">Select your address</span>
+            <span className="header__optionLineOne">Deliver to</span>
+            <span className="header__optionLineTwo">{address?.city}({address?.country_code})</span>
           </div>
         </div>
         {/* Nav */}
         <div className="header__bottom-nav">
+          <Link to="/login" className="header__link">
+            <span>All Products</span>
+          </Link>
           <span>Mobile</span>
           <span>Best Sellers</span>
           <span>Today's Deak</span>

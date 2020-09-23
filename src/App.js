@@ -15,6 +15,7 @@ import { Elements } from '@stripe/react-stripe-js'
 import { auth, db } from './firebase/firebaseConfig';
 import { useStateValue } from './context/StateProvider';
 import Footer from './layout/Footer/Footer';
+import ProductList from './components/ProductList/ProductList';
 
 const promise = loadStripe('pk_test_51HPvTZEm4kUlkaUGOprKB6CIt1RW7nlhHhINLYNBJCTM2m2eSwsML1Lq6eEJmHadidUcmUAP1Rbtq45kC4EW9Iv200K0HUq19q')
 
@@ -23,6 +24,8 @@ function App() {
   const [{ user }, dispatch] = useStateValue()
 
   useEffect(() => {
+
+
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       // user is logged in
       dispatch({
@@ -72,6 +75,10 @@ function App() {
           <Route path="/orders">
             <Header />
             <Orders />
+          </Route>
+          <Route path="/products">
+            <Header />
+            <ProductList />
           </Route>
           <Route path="/payment">
             <Header />

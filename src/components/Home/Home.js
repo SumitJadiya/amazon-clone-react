@@ -193,7 +193,7 @@ function moveCorousal(counter, slides, len) {
         moveCorousal(counter, slides, len);
     }, 5000)
 
-    parseInt(counter) % 2 === 0 ? (
+    parseInt(counter) % 5 === 0 ? (
         setTimeout(() => {
             toast.info(`${faker.name.findName()} added new product to cart`, {
                 position: "bottom-left"

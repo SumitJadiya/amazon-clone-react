@@ -68,7 +68,7 @@ function App() {
     });
   }, [profile])
 
-  console.log(products)
+  console.log(profile)
 
   return (
     <Router>

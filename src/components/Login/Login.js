@@ -1,8 +1,9 @@
 import React from 'react'
 import './Login.css'
 import { Link, useHistory } from 'react-router-dom'
-import { auth } from '../../firebase/firebaseConfig'
+import { provider, auth } from '../../firebase/firebaseConfig'
 import { useState } from 'react'
+import { toast, ToastContainer } from 'react-toastify';
 
 function Login() {
 
@@ -16,9 +17,14 @@ function Login() {
             .signInWithEmailAndPassword(email, password)
             .then((auth) => {
                 // redirect to homepage
-                history.push("/")
+                toast.success(`Login Successful, redirecting to homepage`);
+                setTimeout(function () { history.push("/") }, 1000);
             })
-            .catch(e => console.warn(e.message))
+            .catch(e => {
+                toast.error(`unable to login, please check your credentials`);
+                setTimeout(function () { history.push("/login") }, 4000);
+                console.warn(e.message)
+            })
     }
 
     const register = (e) => {
@@ -27,14 +33,36 @@ function Login() {
             .createUserWithEmailAndPassword(email, password)
             .then((auth) => {
                 // create and redirect to homepage
-                history.push("/profile")
+                toast.success(`Registration Successful, redirecting to homepage`);
+                setTimeout(function () { history.push("/") }, 1000);
             })
-            .catch(e => console.warn(e.message))
+            .catch(e => {
+                toast.error(`unable to register, please check your credentials`);
+                setTimeout(function () { history.push("/login") }, 4000);
+                console.warn(e.message)
+            })
 
+    }
+
+    const loginWithGoogle = (e) => {
+        e.preventDefault() //stops refresh
+
+        auth.signInWithPopup(provider)
+            .then(function (result) {
+                // redirect to homepage
+                toast.success(`Login Successful, redirecting to homepage`);
+                setTimeout(function () { history.push("/") }, 1000);
+            })
+            .catch(e => {
+                toast.error(`unable to login, please check your credentials`);
+                setTimeout(function () { history.push("/login") }, 4000);
+                console.warn(e.message)
+            });
     }
 
     return (
         <div className="login">
+            <ToastContainer />
             <Link to="/">
                 <img
                     className="login__logo"
@@ -65,6 +93,21 @@ function Login() {
                 </p>
 
                 <button onClick={register} className="login__registerButton">Create your amazon account</button>
+
+                <br />
+                <p style={{ textAlign: "center" }}>
+                    Login With :
+                </p>
+
+                <a
+                    className="login__signInGoogleButton"
+                    onClick={loginWithGoogle}
+                >
+                    <img
+                        className="login__signInGoogleIcon"
+                        src="https://elearnam.com/assets/frontend/elegant/images/gicon.png"
+                        alt="google login" />
+                </a>
             </div>
         </div>
     )

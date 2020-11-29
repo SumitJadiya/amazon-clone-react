@@ -48,16 +48,27 @@
   width: 100%;
   height: 30px;
   border: 1px solid;
-  border-color: #a88734 #9c7e31 #846a29;
   margin-top: 10px;
   color: #111;
 }
 
-.login__signInButton {
+.login__signInButton,
+.login__registerButton {
   border-radius: 2px;
   width: 100%;
   height: 30px;
   border: 1px solid;
   margin-top: 10px;
-  border-color: darkgray;
+  border-color: #a88734 #9c7e31 #846a29;
+  background-color: #f0c14b;
+}
+
+.login__signInGoogleIcon {
+  text-align: center;
+  width: 30px;
+  object-fit: contain;
+}
+
+.login__signInGoogleButton {
+  text-align: center;
 }
